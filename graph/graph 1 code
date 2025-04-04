@@ -1,0 +1,26 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+# Sample data representing accident counts by weather condition in Boston
+data = {
+    "Weather Condition": ["Clear", "Rain", "Snow", "Fog", "Cloudy"],
+    "Number of Accidents": [1200, 950, 430, 120, 780]
+}
+
+df = pd.DataFrame(data)
+
+# Create a bar plot
+plt.figure(figsize=(10, 6))
+sns.barplot(x="Weather Condition", y="Number of Accidents", data=df, palette="Blues_d")
+plt.title("Traffic Accidents in Boston by Weather Condition")
+plt.xlabel("Weather Condition")
+plt.ylabel("Number of Accidents")
+plt.tight_layout()
+
+# Save the figure
+graph_path = "/mnt/data/boston_accidents_weather.png"
+plt.savefig(graph_path)
+plt.show()
+
+graph_path
