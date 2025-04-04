@@ -1,0 +1,13 @@
+import matplotlib.pyplot as plt
+
+# Data: accident count by road type (example values)
+road_types = ['Highway', 'Residential', 'Intersection', 'Urban Arterial', 'Collector Road']
+accident_counts = [340, 220, 430, 190, 150]
+
+# Create a pie chart
+plt.figure(figsize=(8, 6))
+plt.pie(accident_counts, labels=road_types, autopct='%1.1f%%', startangle=140, colors=plt.cm.Paired.colors)
+plt.title('Traffic Accident Distribution by Road Type in Boston')
+plt.axis('equal')  # Equal aspect ratio ensures pie is drawn as a circle.
+plt.tight_layout()
+plt.show()
