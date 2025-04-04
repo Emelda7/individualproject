@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+# Sample dataset: Accident counts by time of day
+data = {
+    'Time of Day': ['Morning (7-10 AM)', 'Midday (11 AM - 2 PM)', 'Afternoon (3-6 PM)', 'Evening (7-10 PM)', 'Night (11 PM - 6 AM)'],
+    'Number of Accidents': [1200, 800, 1500, 900, 600]
+}
+
+df = pd.DataFrame(data)
+
+# Plotting
+plt.figure(figsize=(10, 6))
+sns.barplot(x='Time of Day', y='Number of Accidents', data=df, palette='mako')
+plt.title('Traffic Accidents by Time of Day in Boston', fontsize=14)
+plt.xlabel('Time of Day')
+plt.ylabel('Number of Accidents')
+plt.xticks(rotation=15)
+plt.tight_layout()
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.show()
